@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crystals collector</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+  </head>
+
+<h1 id="title">Crystals Collector</h1>
+
+<div id = "rules-container">
+    <h4>You will be given a random number at the start of the game.</h4>
+    <br>
+      <h4>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</h4>
+      <br>
+      <h4>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</h4>
+      <br>
+      <h4>The value of each crystal is hidden from you until you click on it.</h4>
+      <br>
+      <h4>Each time when the game starts, the game will change the values of each crystal</h4>
+</div>
+
+<div>
+<div id = "random-number" ></div>
+<div id = "wins-losses"></div>
+<div id = "crystals-container">
+    <input class="crystals red-button" type="image" src="assets/images/red.png" />
+    <input class="crystals blue-button" type="image" src="assets/images/blue.png" />
+    <input class="crystals green-button" type="image" src="assets/images/green.png" />
+    <input class="crystals yellow-button" type="image" src="assets/images/yellow.png" />
+</div>
+<div id = "score-box">Your total score is:</div>
+<div id = "score-area"></div>
+</div>
+
+  <body>
+
+  </body>
+</html>
