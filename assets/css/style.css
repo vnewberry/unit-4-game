@@ -42,6 +42,7 @@ body {
     padding: 4px;
     color: white;
     background-color:darkgreen;
+    font-size: 3vw;
   }
   #random-number {
     width: 200px;

@@ -17,21 +17,24 @@ $(document).ready(function() {
 
   // create and array that holds the crystal values and a function that determines their values
 
-  var crystals = [0,0,0,0]
-
+  var redCrystal;
+  var blueCrystal;
+  var greenCrystal;
+  var yellowCrystal;
   function randomCrystalSet() {
 
-    crystals[0] = Math.floor(Math.random() * 12) + 1;
-    crystals[1] = Math.floor(Math.random() * 12) + 1;
-    crystals[2] = Math.floor(Math.random() * 12) + 1;
-    crystals[3] = Math.floor(Math.random() * 12) + 1;
-    return crystals;
+    redCrystal = Math.floor(Math.random() * 12) + 1;
+    blueCrystal = Math.floor(Math.random() * 12) + 1;
+    yellowCrystal = Math.floor(Math.random() * 12) + 1;
+    greenCrystal = Math.floor(Math.random() * 12) + 1;
+    
+    
   }
   // now we need a function that sets the game
   function gameSet() {
       currentScore = 0;
       randomNum = randomNumSet();
-      crystals = randomCrystalSet();
+      randomCrystalSet();
       $("#random-number").text(randomNum);
   }
 
@@ -40,13 +43,25 @@ function winlossUpdate(isAWin){
     if (isAWin === true){
         $("#wins-losses").append($("<p>").text("You Win!"));
       gameSet();
-      placeCurrentNumber();
+      placeCurrentScore();
     }
     else if (isAWin === false){
         $("#wins-losses").append($("<p>").text("You Lose!"));
       gameSet();
-      placeCurrentNumber();
+      placeCurrentScore();
     }
+    var winSpan = $("<span>").text(wins);
+    var lossSpan = $("<span>").text(losses);
+
+    var pWins = $("<p>").text("Wins: ");
+    var pLosses = $("<p>").text("Losses: ");
+
+    pWins.append(wSpan);
+    pLosses.append(lSpan);
+
+    $("#wins-losses").append(pWins);
+    $("#wins-losses").append(pLosses);
+
 }
 function placeCurrentScore(){
     var scoreNumDiv = $("<div id='score-number'>").text(currentScore);
@@ -56,7 +71,7 @@ $("#score-area").html(scoreNumDiv);
 
 function updateCurrentScore(crystal) {
     // Update our "current guess" number based on which crystal was clicked.
-    currentScore += crystals[crystal];
+    currentScore += crystal;
   }
   gameSet();
   winlossUpdate();
@@ -71,7 +86,7 @@ function updateCurrentScore(crystal) {
 
   $(".red-button").on("click", function(event) {
     
-    updateCurrentScore(crystals[0]);
+    updateCurrentScore(redCrystal);
     placeCurrentScore();
 
     if (currentScore === randomNum) {
@@ -90,7 +105,7 @@ function updateCurrentScore(crystal) {
     });
     $(".blue-button").on("click", function(event) {
     
-        updateCurrentScore(crystals[1]);
+        updateCurrentScore(blueCrystal);
         placeCurrentScore();
         if (currentScore === randomNum) {
             // Increment wins, restart the game, and update the page.
@@ -108,7 +123,7 @@ function updateCurrentScore(crystal) {
         });
         $(".green-button").on("click", function(event) {
     
-            updateCurrentScore(crystals[2]);
+            updateCurrentScore(greenCrystal);
             placeCurrentScore();
             if (currentScore === randomNum) {
                 // Increment wins, restart the game, and update the page.
@@ -126,7 +141,7 @@ function updateCurrentScore(crystal) {
             });
             $(".yellow-button").on("click", function(event) {
     
-                updateCurrentScore(crystals[3]);
+                updateCurrentScore(yellowCrystal);
                 placeCurrentScore();
                 if (currentScore === randomNum) {
                     // Increment wins, restart the game, and update the page.
