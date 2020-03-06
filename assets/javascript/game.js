@@ -60,7 +60,7 @@ function winlossUpdate(isAWin){
     pLosses.append(lSpan);
 
     $("#wins-losses").append(pWins);
-    $("#wins-losses").append(pLosses);
+    $("#wins-lossescd").append(pLosses);
 
 }
 function placeCurrentScore(){
