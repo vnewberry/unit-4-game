@@ -39,6 +39,7 @@ $(document).ready(function() {
   }
 
 function winlossUpdate(isAWin){
+  $("#wins-losses").empty();
    
     if (isAWin === true){
         $("#wins-losses").append($("<p>").text("You Win!"));
@@ -60,7 +61,7 @@ function winlossUpdate(isAWin){
     pLosses.append(lossSpan);
 
     $("#wins-losses").append(pWins);
-    $("#wins-lossescd").append(pLosses);
+    $("#wins-losses").append(pLosses);
 
 }
 function placeCurrentScore(){
