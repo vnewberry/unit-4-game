@@ -56,8 +56,8 @@ function winlossUpdate(isAWin){
     var pWins = $("<p>").text("Wins: ");
     var pLosses = $("<p>").text("Losses: ");
 
-    pWins.append(wSpan);
-    pLosses.append(lSpan);
+    pWins.append(winSpan);
+    pLosses.append(lossSpan);
 
     $("#wins-losses").append(pWins);
     $("#wins-lossescd").append(pLosses);
